@@ -1,6 +1,6 @@
 import socketio
 
-RENDER_SERVER_URL = 'https://merezha-2.onrender.com'
+RENDER_SERVER_URL = 'https://merezha-2-ziyb.onrender.com'
 USERNAME = input("Придумай собі прізвисько =)\n ")
 
 sio = socketio.Client()
@@ -42,6 +42,9 @@ try:
             break
         elif msg.lower() == 'randomito':
             sio.emit("random")
+            continue
+        elif msg.lower() == 'figna':
+            sio.emit("povna")
             continue
         elif msg.lower() == '/users':
             sio.emit("users")

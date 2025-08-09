@@ -40,6 +40,11 @@ def reserved():
     send(f"Ваша кастомна функція =>", to=request.sid)
 
 
+@socketio.on('povna')
+def shos():
+    resultNum ='ny ok'
+    send(resultNum, broadcast=True)
+
 @socketio.on('users')
 def list_users(data=None):
     if data is None:
